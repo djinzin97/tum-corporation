@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', forceMobileNav);
 
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 80);
+        if (window.innerWidth > 768) {
+            navbar.classList.toggle('scrolled', window.scrollY > 80);
+        } else {
+            navbar.classList.remove('scrolled');
+        }
         forceMobileNav();
         if (scrollTop) scrollTop.classList.toggle('visible', window.scrollY > 500);
     });
