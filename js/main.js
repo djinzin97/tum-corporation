@@ -11,8 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // scroll
     const navbar = document.querySelector('.navbar');
     const scrollTop = document.querySelector('.scroll-top');
+
+    function forceMobileNav() {
+        if (window.innerWidth > 768) {
+            navbar.style.removeProperty('background');
+            navbar.style.removeProperty('backdrop-filter');
+            navbar.style.removeProperty('-webkit-backdrop-filter');
+            return;
+        }
+        navbar.style.setProperty('background', '#1A1A2E', 'important');
+        navbar.style.setProperty('backdrop-filter', 'none', 'important');
+        navbar.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
+    }
+
+    forceMobileNav();
+    window.addEventListener('resize', forceMobileNav);
+
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 80);
+        forceMobileNav();
         if (scrollTop) scrollTop.classList.toggle('visible', window.scrollY > 500);
     });
     if (scrollTop) {
