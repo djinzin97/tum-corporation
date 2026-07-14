@@ -1,0 +1,60 @@
+======================================================
+  GUIDE DE DEPLOIEMENT — TUM CORPORATION WEBSITE
+======================================================
+
+ETAPE 1 — CONFIGURER EMAILJS (formulaires de contact)
+------------------------------------------------------
+1. Allez sur https://www.emailjs.com et creez un compte gratuit
+2. Ajoutez un "Email Service" connecte a votre Gmail
+   → Notez le "Service ID" (ex: service_xxxxxxx)
+3. Creez un template "Contact"
+   → Variables a inclure dans le template : from_name, from_email, phone, service, message
+   → Notez le "Template ID" (ex: template_xxxxxxx)
+4. Creez un template "Candidature"
+   → Variables : from_name, from_email, phone, poste, motivation
+   → Notez le "Template ID" (ex: template_xxxxxxx)
+5. Allez dans Account > API Keys → copiez votre "Public Key"
+
+Puis editez ces 2 fichiers :
+  - index.html  (ligne ~611) : remplacez VOTRE_PUBLIC_KEY_ICI
+  - js/main.js  (ligne ~186) : remplacez VOTRE_SERVICE_ID et VOTRE_CONTACT_TEMPLATE_ID
+  - js/main.js  (ligne ~234) : remplacez VOTRE_SERVICE_ID et VOTRE_CAREER_TEMPLATE_ID
+
+
+ETAPE 2 — DEPLOYER SUR NETLIFY (gratuit, recommande)
+------------------------------------------------------
+1. Allez sur https://www.netlify.com et creez un compte
+2. Cliquez "Add new site" > "Deploy manually"
+3. Glissez-deposez le dossier "tum-corporation" dans la zone prevue
+4. Votre site sera en ligne sur une URL du type : xxx.netlify.app
+
+Alternative : Vercel (https://vercel.com) ou GitHub Pages
+
+
+ETAPE 3 — CONNECTER LE DOMAINE tumcorporation.com
+--------------------------------------------------
+1. Achetez le domaine sur Namecheap, GoDaddy, ou OVH (~10-15$/an)
+2. Dans Netlify : Site settings > Domain management > Add custom domain
+3. Suivez les instructions pour pointer vos DNS vers Netlify
+4. Le HTTPS (certificat SSL) est active automatiquement par Netlify
+Note : La propagation DNS peut prendre 24-48h
+
+
+ETAPE 4 — APRES LE DEPLOIEMENT (optionnel)
+-------------------------------------------
+- Creer les pages Facebook et LinkedIn de TUM Corporation
+  → Puis mettre a jour les liens dans index.html (section contact-socials)
+- Enregistrer le site sur Google Search Console (SEO)
+  → https://search.console.google.com
+- Soumettre le sitemap : https://tumcorporation.com/sitemap.xml
+
+
+CHECKLIST FINALE
+----------------
+[ ] EmailJS configure (Public Key + Service ID + 2 Template IDs)
+[ ] Site deploye sur Netlify/Vercel
+[ ] Domaine achete et pointe vers l'hebergeur
+[ ] HTTPS actif (automatique sur Netlify)
+[ ] Pages reseaux sociaux creees (facultatif au lancement)
+
+======================================================
