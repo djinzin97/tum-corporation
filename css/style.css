@@ -1,3 +1,9 @@
+/*!
+ * TUM Corporation — Interface
+ * Anonyme C&D · Codes & Design
+ * © 2026
+ */
+
 :root {
     --primary: #4361EE;
     --primary-dark: #3A56D4;
@@ -40,7 +46,7 @@ img { max-width: 100%; height: auto; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* ===== NAVBAR ===== */
+/* nav */
 .navbar {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 1000; padding: 16px 0;
@@ -104,7 +110,7 @@ img { max-width: 100%; height: auto; }
 .lang-switch button.active { background: var(--white); color: var(--primary); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
 .navbar.scrolled .lang-switch button.active { background: var(--primary); color: var(--white); }
 
-/* ===== HERO ===== */
+/* hero */
 .hero {
     min-height: 100vh; display: flex; align-items: center; position: relative;
     background: linear-gradient(135deg, var(--secondary) 0%, #16213E 50%, var(--primary) 100%);
@@ -186,7 +192,7 @@ img { max-width: 100%; height: auto; }
     letter-spacing: 1px;
 }
 
-/* ===== SECTIONS COMMON ===== */
+/* sections */
 section { padding: 100px 0; }
 .section-header { text-align: center; margin-bottom: 64px; }
 .section-tag {
@@ -199,7 +205,7 @@ section { padding: 100px 0; }
 .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 16px; }
 .section-header p { font-size: 1.05rem; color: var(--gray); max-width: 700px; margin: 0 auto; }
 
-/* ===== ABOUT ===== */
+/* about */
 .about { background: var(--light); }
 
 .about-intro-grid {
@@ -278,7 +284,7 @@ section { padding: 100px 0; }
 .about-pillar h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary); }
 .about-pillar p { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
 
-/* ===== SERVICES ===== */
+/* services */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 
 .service-card {
@@ -338,7 +344,7 @@ section { padding: 100px 0; }
 }
 .service-close-btn:hover { background: var(--white); color: var(--secondary); }
 
-/* ===== WHY US ===== */
+/* why-us */
 .why-us {
     background: linear-gradient(135deg, var(--secondary) 0%, #16213E 100%);
     color: var(--white); position: relative; overflow: hidden;
@@ -367,7 +373,7 @@ section { padding: 100px 0; }
 .why-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
 .why-card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
 
-/* ===== CAREERS ===== */
+/* careers */
 .careers { background: var(--light); padding: 20px 0; min-height: auto; }
 .careers-content { animation: fadeSlide 0.5s ease forwards; }
 .careers-content[style*="display: none"] + .careers-placeholder { display: block; }
@@ -406,7 +412,7 @@ section { padding: 100px 0; }
 .career-form .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
 .career-form .btn { width: 100%; justify-content: center; }
 
-/* ===== CONTACT ===== */
+/* contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; }
 .contact-info { padding-right: 20px; }
 .contact-info h2 { font-size: 2.2rem; margin-bottom: 16px; }
@@ -452,7 +458,7 @@ section { padding: 100px 0; }
 .form-submit { grid-column: 1 / -1; display: flex; gap: 12px; margin-top: 8px; }
 .form-submit .btn { flex: 1; justify-content: center; }
 
-/* ===== FOOTER ===== */
+/* footer */
 .footer { background: var(--dark); color: rgba(255, 255, 255, 0.7); padding: 80px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
 .footer-brand .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
@@ -474,7 +480,7 @@ section { padding: 100px 0; }
 .footer-bottom-links { display: flex; gap: 24px; }
 .footer-bottom-links a:hover { color: var(--primary-light); }
 
-/* ===== WHATSAPP FLOAT ===== */
+/* float */
 .whatsapp-float {
     position: fixed; bottom: 30px; right: 30px; z-index: 999;
     width: 60px; height: 60px; background: var(--success); border-radius: 50%;
@@ -486,7 +492,7 @@ section { padding: 100px 0; }
 @keyframes whatsappBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .whatsapp-float svg { width: 30px; height: 30px; }
 
-/* ===== SCROLL TO TOP ===== */
+/* top */
 .scroll-top {
     position: fixed; bottom: 30px; right: 100px; z-index: 998;
     width: 46px; height: 46px; background: var(--primary); border-radius: 50%;
@@ -497,7 +503,7 @@ section { padding: 100px 0; }
 .scroll-top.visible { opacity: 1; visibility: visible; }
 .scroll-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
 
-/* ===== ANIMATIONS ===== */
+/* animations */
 .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 .fade-in-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -505,7 +511,7 @@ section { padding: 100px 0; }
 .fade-in-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .fade-in-right.visible { opacity: 1; transform: translateX(0); }
 
-/* ===== SERVICE MODAL OVERLAY ===== */
+/* modal */
 .service-overlay {
     display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
     z-index: 2000; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(10px);
@@ -536,7 +542,7 @@ section { padding: 100px 0; }
 }
 .service-overlay-close:hover { background: var(--primary); color: var(--white); }
 
-/* ===== RESPONSIVE ===== */
+/* responsive */
 @media (max-width: 1024px) {
     .hero .container { grid-template-columns: 1fr; text-align: center; }
     .hero-content { order: 1; }

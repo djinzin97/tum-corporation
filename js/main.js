@@ -1,8 +1,14 @@
 (function(){ if (typeof emailjs !== 'undefined') emailjs.init({ publicKey: '2ZAwsZfQRiTQB4yva' }); })();
 
+(function() {
+    var s = 'background:#4361EE;color:#fff;font-weight:700;padding:4px 0 4px 10px;border-radius:4px 0 0 4px;font-size:12px;';
+    var d = 'background:#1A1A2E;color:#6B8AFF;padding:4px 10px 4px 0;border-radius:0 4px 4px 0;font-size:12px;';
+    console.log('\n%c Anonyme C&D %c Codes & Design Studio \n', s, d);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== NAVBAR SCROLL =====
+    // scroll
     const navbar = document.querySelector('.navbar');
     const scrollTop = document.querySelector('.scroll-top');
     window.addEventListener('scroll', () => {
@@ -13,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // ===== MOBILE NAV =====
+    // mobile nav
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (navToggle) {
@@ -31,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== ACTIVE NAV LINK =====
+    // active link
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 120;
@@ -48,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== SCROLL ANIMATIONS =====
+    // animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
 
-    // ===== COUNTER ANIMATION =====
+    // counters
     function animateCounter(el) {
         const target = parseInt(el.dataset.target);
         const suffix = el.dataset.suffix || '';
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-number[data-target]').forEach(c => counterObserver.observe(c));
 
-    // ===== SERVICES MODAL =====
+    // modal
     const overlay = document.createElement('div');
     overlay.className = 'service-overlay';
     overlay.innerHTML = '<div class="service-overlay-content"><button class="service-overlay-close">&times;</button><h3></h3><div class="service-overlay-text"></div></div>';
@@ -102,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // ===== CAREERS TOGGLE =====
+    // careers
     const careersContent = document.querySelector('.careers-content');
     const careersSection = document.getElementById('careers');
     document.querySelectorAll('a[href="#careers"]').forEach(link => {
@@ -121,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== SECURITY HELPERS =====
+    // helpers
     function sanitize(str) {
         const div = document.createElement('div');
         div.textContent = str;
@@ -151,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return field && field.value.length > 0;
     }
 
-    // ===== PROTECTED EMAIL DECODE =====
+    // email decode
     document.querySelectorAll('.protected-email').forEach(el => {
         const user = el.dataset.user;
         const domain = el.dataset.domain;
@@ -160,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.href = 'mai' + 'lto:' + email;
     });
 
-    // ===== FORMS =====
+    // forms
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', e => {
@@ -258,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== SMOOTH SCROLL =====
+    // smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (!anchor.getAttribute('href').includes('careers')) {
             anchor.addEventListener('click', function(e) {
@@ -269,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ===== LANGUAGE SYSTEM =====
+    // i18n
     let currentLang = 'fr';
 
     const siteContent = {
