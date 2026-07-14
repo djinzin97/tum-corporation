@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (careersContent) {
                 if (careersContent.style.display === 'none') {
                     careersContent.style.display = 'block';
-                    careersSection.style.padding = '100px 0';
+                    careersSection.style.padding = '80px 0';
                 } else {
                     careersContent.style.display = 'none';
-                    careersSection.style.padding = '20px 0';
+                    careersSection.style.padding = '0';
                 }
                 setTimeout(() => careersSection.scrollIntoView({ behavior: 'smooth' }), 100);
             }
