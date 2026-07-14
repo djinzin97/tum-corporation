@@ -28,19 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         _savedY = window.scrollY;
         navToggle.classList.add('active');
         navLinks.classList.add('active');
-        document.body.style.position = 'fixed';
-        document.body.style.top = '-' + _savedY + 'px';
-        document.body.style.width = '100%';
+        navbar.classList.add('menu-open');
         document.body.style.overflow = 'hidden';
     }
     function closeMobileMenu() {
         navToggle.classList.remove('active');
         navLinks.classList.remove('active');
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
+        navbar.classList.remove('menu-open');
         document.body.style.overflow = '';
-        window.scrollTo(0, _savedY);
     }
 
     if (navToggle) {
